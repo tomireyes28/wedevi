@@ -7,8 +7,8 @@ export default function Footer() {
     <footer id="contacto" className="bg-brand-navy pt-24 pb-12 text-white relative overflow-hidden">
       
       {/* Efectos de luz traseros (Glows abstractos) */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-blue/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-blue/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-150 h-150 bg-brand-blue/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-brand-blue/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
@@ -37,9 +37,9 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="bg-white/5 p-8 sm:p-10 rounded-[2rem] border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
+            className="bg-white/5 p-8 sm:p-10 rounded-4xl border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-blue to-transparent opacity-50"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-blue to-transparent opacity-50"></div>
             
             {/* Recordatorio: Reemplazar el action por el link de Formspree cuando exportemos a Hostinger */}
             <form action="ACA_IRA_TU_LINK_DE_FORMSPREE" method="POST" className="space-y-5">

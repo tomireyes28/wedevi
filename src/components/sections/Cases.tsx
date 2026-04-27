@@ -68,7 +68,7 @@ export default function Cases() {
             >
               <div className="absolute inset-0 bg-brand-blue/10 blur-3xl rounded-full transform scale-110 -z-10"></div>
               <div className="bg-white p-2 rounded-2xl shadow-2xl border border-gray-100 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 flex flex-col h-[350px]">
+                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 flex flex-col h-87.5">
                   {/* Top bar tipo macOS */}
                   <div className="bg-white border-b border-gray-200 px-4 py-3 flex gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -109,7 +109,7 @@ export default function Cases() {
             >
               <div className="absolute inset-0 bg-brand-navy/5 blur-3xl rounded-full transform scale-110 -z-10"></div>
               <div className="bg-white p-2 rounded-2xl shadow-2xl border border-gray-100 transform lg:-rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 h-[350px] flex flex-col relative">
+                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 h-87.5 flex flex-col relative">
                   {/* Hero simulado */}
                   <div className="h-1/2 bg-brand-navy p-6 flex flex-col justify-center gap-3">
                      <div className="w-1/2 h-8 bg-white/20 rounded"></div>

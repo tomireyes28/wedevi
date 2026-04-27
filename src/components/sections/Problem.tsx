@@ -21,7 +21,7 @@ export default function Problem() {
   return (
     <section id="problema" className="py-24 bg-white relative overflow-hidden">
       {/* Detalle visual: una luz muy tenue en el fondo para que no sea blanco plano */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-125 h-125 bg-red-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

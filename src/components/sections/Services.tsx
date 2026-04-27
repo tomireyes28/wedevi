@@ -59,7 +59,7 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="group relative bg-white/70 backdrop-blur-sm p-8 rounded-[2rem] border border-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(0,123,255,0.15)] hover:bg-white transition-all duration-500"
+              className="group relative bg-white/70 backdrop-blur-sm p-8 rounded-4xl border border-white shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-10px_rgba(0,123,255,0.15)] hover:bg-white transition-all duration-500"
             >
               {/* Brillo de esquina en hover */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

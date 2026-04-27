@@ -5,6 +5,7 @@ import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import Cases from "@/components/sections/Cases";
 import Footer from "@/components/layout/Footer";
+import Features from "@/components/sections/Features";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <Process />
       <Cases />
+      <Features />
       <Footer />
     </main>
   );

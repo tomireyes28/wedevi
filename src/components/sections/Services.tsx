@@ -28,10 +28,10 @@ export default function Services() {
   return (
     <section id="servicios" className="py-24 bg-brand-soft relative overflow-hidden">
       {/* Patrón de puntos de fondo (Grid Dots) */}
-      <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(#0A192F_1px,transparent_1px)] [background-size:20px_20px]"></div>
+      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#0A192F_1px,transparent_1px)] bg-size-[20px_20px]"></div>
       
       {/* Glow decorativo detrás de las tarjetas */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

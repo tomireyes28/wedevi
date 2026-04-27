@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, Code2, Rocket } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const steps = [
   {
@@ -21,7 +21,7 @@ const steps = [
   }
 ];
 
-const containerVariants = {
+const containerVariants : Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -29,7 +29,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants : Variants = {
   hidden: { opacity: 0, y: 20, scale: 0.9 },
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
 };
@@ -53,7 +53,7 @@ export default function Process() {
 
         <div className="relative mt-12">
           {/* Línea conectora de fondo (Gris) - Solo Desktop */}
-          <div className="hidden md:block absolute top-[2.5rem] left-[10%] right-[10%] h-[2px] bg-gray-100 -z-10" />
+          <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-gray-100 -z-10" />
           
           {/* Línea conectora animada (Azul) - Se dibuja al hacer scroll */}
           <motion.div 
@@ -61,7 +61,7 @@ export default function Process() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
-            className="hidden md:block absolute top-[2.5rem] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-brand-blue/20 via-brand-blue to-brand-blue/20 origin-left -z-10 shadow-[0_0_10px_rgba(0,123,255,0.5)]"
+            className="hidden md:block absolute top-10 left-[10%] right-[10%] h-0.5 bg-linear-to-r from-brand-blue/20 via-brand-blue to-brand-blue/20 origin-left -z-10 shadow-[0_0_10px_rgba(0,123,255,0.5)]"
           />
           
           <motion.div 

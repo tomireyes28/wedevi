@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-soft">
       {/* Efectos de luz de fondo (Glows) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--color-brand-blue),_transparent_70%)] pointer-events-none blur-3xl"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-100 opacity-20 bg-[radial-gradient(ellipse_at_top,var(--color-brand-blue),transparent_70%)] pointer-events-none blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -75,11 +75,11 @@ export default function Hero() {
             className="relative hidden lg:block"
           >
             {/* Círculo decorativo de fondo */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-gradient-to-tr from-brand-blue/5 to-transparent rounded-full blur-3xl -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-linear-to-tr from-brand-blue/5 to-transparent rounded-full blur-3xl -z-10"></div>
             
             {/* Contenedor principal del Mockup */}
             <div className="bg-white/60 backdrop-blur-xl p-3 rounded-2xl shadow-2xl border border-white/50 relative">
-              <div className="bg-gray-50 rounded-xl h-[420px] w-full overflow-hidden relative border border-gray-100 flex shadow-inner">
+              <div className="bg-gray-50 rounded-xl h-105 w-full overflow-hidden relative border border-gray-100 flex shadow-inner">
                 
                 {/* Sidebar abstracto */}
                 <div className="w-1/4 h-full bg-white border-r border-gray-100 p-4 flex flex-col gap-3">
@@ -114,7 +114,7 @@ export default function Hero() {
                     transition={{ delay: 0.8, duration: 0.6 }}
                     className="flex-1 bg-white rounded-xl shadow-md border border-gray-100 p-4 relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/5 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-brand-blue/5 to-transparent"></div>
                     <svg className="w-full h-full text-brand-blue/20" viewBox="0 0 100 40" preserveAspectRatio="none">
                       <path d="M0 40 L0 30 Q 10 20 20 25 T 40 15 T 60 20 T 80 5 L100 10 L100 40 Z" fill="currentColor" />
                       <path d="M0 30 Q 10 20 20 25 T 40 15 T 60 20 T 80 5 L100 10" fill="none" stroke="var(--color-brand-blue)" strokeWidth="1" />

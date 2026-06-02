@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Cases() {
   return (
@@ -58,7 +59,7 @@ export default function Cases() {
               </button>
             </motion.div>
 
-            {/* Mockup Abstracto Dashboard */}
+            {/* Mockup Real: Therapio */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -67,39 +68,20 @@ export default function Cases() {
               className="order-1 lg:order-2 relative"
             >
               <div className="absolute inset-0 bg-brand-blue/10 blur-3xl rounded-full transform scale-110 -z-10"></div>
-              <div className="bg-white p-2 rounded-2xl shadow-2xl border border-gray-100 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 flex flex-col h-87.5">
-                  {/* Top bar tipo macOS */}
-                  <div className="bg-white border-b border-gray-200 px-4 py-3 flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  </div>
-                  {/* UI Interna */}
-                  <div className="flex flex-1 p-4 gap-4">
-                     <div className="w-1/4 bg-white rounded-lg border border-gray-100 p-3 space-y-3">
-                        <div className="w-full h-4 bg-gray-200 rounded"></div>
-                        <div className="w-3/4 h-4 bg-gray-100 rounded"></div>
-                        <div className="w-1/2 h-4 bg-gray-100 rounded"></div>
-                     </div>
-                     <div className="flex-1 space-y-4">
-                        <div className="w-1/3 h-6 bg-brand-blue/20 rounded"></div>
-                        <div className="w-full h-32 bg-white rounded-lg border border-gray-100 shadow-sm"></div>
-                        <div className="flex gap-4">
-                           <div className="flex-1 h-20 bg-white rounded-lg border border-gray-100"></div>
-                           <div className="flex-1 h-20 bg-white rounded-lg border border-gray-100"></div>
-                        </div>
-                     </div>
-                  </div>
-                </div>
-              </div>
+              <Image 
+                src="/image1.png" 
+                alt="Dashboard de la Plataforma Therapio" 
+                width={800} 
+                height={600} 
+                className="w-full h-auto object-contain transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
+              />
             </motion.div>
           </div>
 
           {/* Caso 2: Presencia Digital (Imagen a la Izq, Texto a la Der) */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            {/* Mockup Abstracto Web */}
+            {/* Mockup Real: Aberturas */}
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -108,22 +90,13 @@ export default function Cases() {
               className="relative"
             >
               <div className="absolute inset-0 bg-brand-navy/5 blur-3xl rounded-full transform scale-110 -z-10"></div>
-              <div className="bg-white p-2 rounded-2xl shadow-2xl border border-gray-100 transform lg:-rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="bg-gray-50 rounded-xl overflow-hidden border border-gray-100 h-87.5 flex flex-col relative">
-                  {/* Hero simulado */}
-                  <div className="h-1/2 bg-brand-navy p-6 flex flex-col justify-center gap-3">
-                     <div className="w-1/2 h-8 bg-white/20 rounded"></div>
-                     <div className="w-3/4 h-4 bg-white/10 rounded"></div>
-                     <div className="w-24 h-8 bg-brand-blue rounded mt-2"></div>
-                  </div>
-                  {/* Cards simuladas */}
-                  <div className="flex px-6 -mt-8 gap-4">
-                     <div className="flex-1 h-32 bg-white rounded-xl shadow-lg border border-gray-100"></div>
-                     <div className="flex-1 h-32 bg-white rounded-xl shadow-lg border border-gray-100 mt-4"></div>
-                     <div className="flex-1 h-32 bg-white rounded-xl shadow-lg border border-gray-100"></div>
-                  </div>
-                </div>
-              </div>
+              <Image 
+                src="/image2.png" 
+                alt="Web Corporativa de Aberturas" 
+                width={800} 
+                height={600} 
+                className="w-full h-auto object-contain transform lg:-rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
+              />
             </motion.div>
 
             <motion.div 

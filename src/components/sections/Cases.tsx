@@ -55,8 +55,8 @@ export default function Cases() {
               </div>
               
               {/* Transformado a etiqueta <a> para redirigir a un PDF o vista detallada */}
-              <a href="/casos/therapio-detalles.pdf" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all cursor-pointer">
-                Ver detalles del proyecto <ArrowRight size={20} />
+              <a href="https://psycho-manager.vercel.app/auth" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
+                Visitar sitio web en vivo <ArrowRight size={20} />
               </a>
             </motion.div>
 
@@ -125,7 +125,7 @@ export default function Cases() {
               </div>
 
               {/* Link directo a la web del cliente */}
-              <a href="https://www.link-a-la-web-de-aberturas.com" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
+              <a href="https://aberturasnyl.com/" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
                 Visitar sitio web en vivo <ArrowRight size={20} />
               </a>
             </motion.div>
@@ -160,8 +160,8 @@ export default function Cases() {
               </div>
               
               {/* Link a un PDF o vista detallada */}
-              <a href="/casos/simulador-dea-detalles.pdf" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all cursor-pointer">
-                Ver detalles del proyecto <ArrowRight size={20} />
+              <a href="https://dea-beta.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
+                Visitar aplicacion web en vivo <ArrowRight size={20} />
               </a>
             </motion.div>
 

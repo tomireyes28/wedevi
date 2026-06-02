@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   // CONFIGURACIÓN:
   // Reemplazá este número por el tuyo. 
   // Formato: Código de país (54 para Arg) + Código de área + Número. Sin el símbolo "+" ni espacios.
-  const phoneNumber = "5491100000000"; 
+  const phoneNumber = "5491167012969"; 
   const message = "¡Hola equipo de Wedevi! Me gustaría recibir asesoramiento para mi negocio.";
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

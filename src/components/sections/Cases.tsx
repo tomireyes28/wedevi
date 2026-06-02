@@ -45,18 +45,19 @@ export default function Cases() {
               
               <div className="space-y-6 text-brand-gray text-lg">
                 <div className="flex gap-4">
-                  <div className="mt-1 text-red-400"><CheckCircle2 size={24} /></div>
+                  <div className="mt-1 text-red-400"><CheckCircle2 className="shrink-0" size={24} /></div>
                   <p><strong className="text-brand-navy font-semibold">El desafío:</strong> Organizar la información de pacientes y turnos de forma privada y eficiente para profesionales independientes que usan papel o Excel.</p>
                 </div>
                 <div className="flex gap-4">
-                  <div className="mt-1 text-green-500"><CheckCircle2 size={24} /></div>
+                  <div className="mt-1 text-green-500"><CheckCircle2 className="shrink-0" size={24} /></div>
                   <p><strong className="text-brand-navy font-semibold">La solución:</strong> Un portal seguro con roles de usuario, agenda integrada y carga de datos ágil. Todo bajo una interfaz limpia que reduce la carga cognitiva.</p>
                 </div>
               </div>
               
-              <button className="mt-10 flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all">
+              {/* Transformado a etiqueta <a> para redirigir a un PDF o vista detallada */}
+              <a href="/casos/therapio-detalles.pdf" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all cursor-pointer">
                 Ver detalles del proyecto <ArrowRight size={20} />
-              </button>
+              </a>
             </motion.div>
 
             {/* Mockup Real: Therapio */}
@@ -73,7 +74,7 @@ export default function Cases() {
                 alt="Dashboard de la Plataforma Therapio" 
                 width={800} 
                 height={600} 
-                className="w-full h-auto object-contain transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
+                className="w-full h-auto object-contain transform scale-110 lg:scale-125 lg:rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
               />
             </motion.div>
           </div>
@@ -95,7 +96,7 @@ export default function Cases() {
                 alt="Web Corporativa de Aberturas" 
                 width={800} 
                 height={600} 
-                className="w-full h-auto object-contain transform lg:-rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
+                className="w-full h-auto object-contain transform scale-110 lg:scale-125 lg:-rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
               />
             </motion.div>
 
@@ -114,20 +115,73 @@ export default function Cases() {
               
               <div className="space-y-6 text-brand-gray text-lg">
                 <div className="flex gap-4">
-                  <div className="mt-1 text-red-400"><CheckCircle2 size={24} /></div>
+                  <div className="mt-1 text-red-400"><CheckCircle2 className="shrink-0" size={24} /></div>
                   <p><strong className="text-brand-navy font-semibold">El desafío:</strong> Modernizar la imagen de una empresa de instalaciones (aberturas/vidriería) para captar clientes corporativos y ganar licitaciones.</p>
                 </div>
                 <div className="flex gap-4">
-                  <div className="mt-1 text-green-500"><CheckCircle2 size={24} /></div>
+                  <div className="mt-1 text-green-500"><CheckCircle2 className="shrink-0" size={24} /></div>
                   <p><strong className="text-brand-navy font-semibold">La solución:</strong> Una landing page ultrarrápida, con un catálogo visual claro de los trabajos realizados y un sistema de contacto directo por WhatsApp.</p>
                 </div>
               </div>
 
-              <button className="mt-10 flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all">
-                Ver detalles del proyecto <ArrowRight size={20} />
-              </button>
+              {/* Link directo a la web del cliente */}
+              <a href="https://www.link-a-la-web-de-aberturas.com" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
+                Visitar sitio web en vivo <ArrowRight size={20} />
+              </a>
             </motion.div>
 
+          </div>
+
+          {/* Caso 3: Simulador DEA (Texto a la Izq, Imagen a la Der) */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="order-2 lg:order-1"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue text-sm font-bold tracking-wider uppercase mb-6">
+                Desarrollo Avanzado
+              </div>
+              <h3 className="text-3xl font-bold text-brand-navy mb-6 leading-tight">
+                Simulador Médico Interactivo (DEA)
+              </h3>
+              
+              <div className="space-y-6 text-brand-gray text-lg">
+                <div className="flex gap-4">
+                  <div className="mt-1 text-red-400"><CheckCircle2 className="shrink-0" size={24} /></div>
+                  <p><strong className="text-brand-navy font-semibold">El desafío:</strong> Entrenar al personal de salud en el uso de desfibriladores mediante una experiencia interactiva realista, sin depender de equipos físicos costosos.</p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="mt-1 text-green-500"><CheckCircle2 className="shrink-0" size={24} /></div>
+                  <p><strong className="text-brand-navy font-semibold">La solución:</strong> Una aplicación web con lógica compleja que simula estados, tiempos de respuesta y métricas vitales en tiempo real, permitiendo evaluaciones precisas.</p>
+                </div>
+              </div>
+              
+              {/* Link a un PDF o vista detallada */}
+              <a href="/casos/simulador-dea-detalles.pdf" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-blue font-bold hover:gap-4 transition-all cursor-pointer">
+                Ver detalles del proyecto <ArrowRight size={20} />
+              </a>
+            </motion.div>
+
+            {/* Mockup Real: Simulador DEA */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="order-1 lg:order-2 relative"
+            >
+              <div className="absolute inset-0 bg-brand-blue/10 blur-3xl rounded-full transform scale-110 -z-10"></div>
+              <Image 
+                src="/image3.png" 
+                alt="Simulador Médico DEA" 
+                width={800} 
+                height={600} 
+                className="w-full h-auto object-contain transform scale-110 lg:scale-125 lg:rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
+              />
+            </motion.div>
           </div>
 
         </div>

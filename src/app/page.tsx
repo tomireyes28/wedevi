@@ -8,6 +8,7 @@ import Features from "@/components/sections/Features";
 import Footer from "@/components/layout/Footer";
 import ParticlesBackground from "@/components/ui/ParticlesBackground";
 import WhatsAppButton from "@/components/ui/WhatsAppButton"; // <-- 1. Importar
+import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Process />
         <Cases />
         <Features />
+        <FAQ />
       </div>
       
       <WhatsAppButton /> 

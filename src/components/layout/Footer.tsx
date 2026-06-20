@@ -1,8 +1,68 @@
 "use client";
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Loader2, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
+
+// 1. Definimos las validaciones con Zod (Directamente acá para no crear más archivos)
+const contactSchema = z.object({
+  name: z.string().min(2, "Por favor, ingresá tu nombre o empresa."),
+  email: z.string().email("Ingresá un correo válido."),
+  message: z.string().min(10, "Contanos un poco más sobre tu desafío (mínimo 10 caracteres)."),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Footer() {
+  const [serverState, setServerState] = useState<{ success?: string; error?: string } | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  // 2. Lógica de envío a Web3Forms
+  const onSubmit = async (data: ContactFormData) => {
+    setServerState(null);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          Empresa_o_Nombre: data.name,
+          Email: data.email,
+          Desafio_a_resolver: data.message,
+          // Asunto del mail para que lo identifiques rápido:
+          subject: `🔥 Nuevo lead de Wedevi: ${data.name}`, 
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setServerState({ success: '¡Consulta enviada con éxito! Te contactaremos a la brevedad.' });
+        reset();
+      } else {
+        setServerState({ error: 'Hubo un error al enviar. Por favor, intentá nuevamente.' });
+      }
+    } catch (error) {
+      console.error(error);
+      setServerState({ error: 'Ocurrió un error inesperado al conectar con el servidor.' });
+    }
+  };
+
   return (
     <footer id="contacto" className="bg-brand-navy pt-24 pb-12 text-white relative overflow-hidden">
       
@@ -31,7 +91,7 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Formulario Estático */}
+          {/* Formulario Dinámico Integrado */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,52 +101,74 @@ export default function Footer() {
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-blue to-transparent opacity-50"></div>
             
-            {/* Recordatorio: Reemplazar el action por el link de Formspree cuando exportemos a Hostinger */}
-            <form action="ACA_IRA_TU_LINK_DE_FORMSPREE" method="POST" className="space-y-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div>
                 <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1 mb-1 block">Tu Nombre o Empresa</label>
                 <input 
                   type="text" 
                   id="name" 
-                  name="name" 
-                  required
+                  {...register('name')}
                   placeholder="Ej: Clínica San José" 
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white/10 transition-all"
+                  className={`w-full bg-white/5 border ${errors.name ? 'border-red-400/50' : 'border-white/10'} rounded-xl px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white/10 transition-all`}
                 />
+                {errors.name && <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.name.message}</p>}
               </div>
+
               <div>
                 <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1 mb-1 block">Correo Electrónico</label>
                 <input 
                   type="email" 
                   id="email" 
-                  name="email" 
-                  required
+                  {...register('email')}
                   placeholder="hola@empresa.com" 
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white/10 transition-all"
+                  className={`w-full bg-white/5 border ${errors.email ? 'border-red-400/50' : 'border-white/10'} rounded-xl px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white/10 transition-all`}
                 />
+                {errors.email && <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.email.message}</p>}
               </div>
+
               <div>
                 <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1 mb-1 block">¿Qué proceso querés mejorar?</label>
                 <textarea 
                   id="message" 
-                  name="message" 
+                  {...register('message')}
                   rows={4}
                   placeholder="Contanos un poco sobre tu desafío actual..." 
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white/10 transition-all resize-none"
+                  className={`w-full bg-white/5 border ${errors.message ? 'border-red-400/50' : 'border-white/10'} rounded-xl px-4 py-3.5 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:bg-white/10 transition-all resize-none`}
                 ></textarea>
+                {errors.message && <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.message.message}</p>}
               </div>
+
+              {/* Mensajes de Servidor (Éxito / Error) */}
+              {serverState?.success && (
+                <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-sm flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 shrink-0" />
+                  {serverState.success}
+                </div>
+              )}
+              {serverState?.error && (
+                <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm flex items-center gap-3">
+                  <XCircle className="w-5 h-5 shrink-0" />
+                  {serverState.error}
+                </div>
+              )}
+
               <button 
                 type="submit" 
-                className="w-full group bg-brand-blue hover:bg-blue-600 text-white font-medium py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(0,123,255,0.3)] hover:shadow-[0_0_30px_rgba(0,123,255,0.5)] mt-2 flex justify-center items-center gap-2"
+                disabled={isSubmitting || serverState?.success !== undefined}
+                className="w-full group bg-brand-blue hover:bg-blue-600 text-white font-medium py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(0,123,255,0.3)] hover:shadow-[0_0_30px_rgba(0,123,255,0.5)] mt-2 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Enviar Consulta
-                <motion.span 
-                  className="inline-block"
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                >
-                  →
-                </motion.span>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" /> Procesando...
+                  </>
+                ) : serverState?.success ? (
+                  "Consulta Enviada"
+                ) : (
+                  <>
+                    Enviar Consulta
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>

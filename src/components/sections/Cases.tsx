@@ -54,13 +54,11 @@ export default function Cases() {
                 </div>
               </div>
               
-              {/* Transformado a etiqueta <a> para redirigir a un PDF o vista detallada */}
               <a href="https://psycho-manager.vercel.app/auth" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
                 Visitar sitio web en vivo <ArrowRight size={20} />
               </a>
             </motion.div>
 
-            {/* Mockup Real: Therapio */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -82,7 +80,6 @@ export default function Cases() {
           {/* Caso 2: Presencia Digital (Imagen a la Izq, Texto a la Der) */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            {/* Mockup Real: Aberturas */}
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -124,7 +121,6 @@ export default function Cases() {
                 </div>
               </div>
 
-              {/* Link directo a la web del cliente */}
               <a href="https://aberturasnyl.com/" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
                 Visitar sitio web en vivo <ArrowRight size={20} />
               </a>
@@ -159,13 +155,11 @@ export default function Cases() {
                 </div>
               </div>
               
-              {/* Link a un PDF o vista detallada */}
               <a href="https://dea-beta.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
                 Visitar aplicacion web en vivo <ArrowRight size={20} />
               </a>
             </motion.div>
 
-            {/* Mockup Real: Simulador DEA */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -182,6 +176,59 @@ export default function Cases() {
                 className="w-full h-auto object-contain transform scale-110 lg:scale-125 lg:rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
               />
             </motion.div>
+          </div>
+
+          {/* Caso 4: E-commerce (Imagen a la Izq, Texto a la Der) */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            {/* Mockup Real: E-commerce Camisetas */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-brand-navy/5 blur-3xl rounded-full transform scale-110 -z-10"></div>
+              <Image 
+                src="/image4.png" 
+                alt="Tienda Online de Camisetas Deportivas" 
+                width={800} 
+                height={600} 
+                className="w-full h-auto object-contain transform scale-110 lg:scale-125 lg:-rotate-2 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
+              />
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy/10 text-brand-navy text-sm font-bold tracking-wider uppercase mb-6">
+                Ventas Online
+              </div>
+              <h3 className="text-3xl font-bold text-brand-navy mb-6 leading-tight">
+                E-commerce de Indumentaria
+              </h3>
+              
+              <div className="space-y-6 text-brand-gray text-lg">
+                <div className="flex gap-4">
+                  <div className="mt-1 text-red-400"><CheckCircle2 className="shrink-0" size={24} /></div>
+                  <p><strong className="text-brand-navy font-semibold">El desafío:</strong> Escalar las ventas de camisetas deportivas eliminando los cuellos de botella de responder manualmente cada consulta por stock, talles y envíos en redes sociales.</p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="mt-1 text-green-500"><CheckCircle2 className="shrink-0" size={24} /></div>
+                  <p><strong className="text-brand-navy font-semibold">La solución:</strong> Una tienda virtual de alto rendimiento con gestión de inventario, cálculo de envíos integrado, carrito de compras dinámico y un panel de administración autogestionable.</p>
+                </div>
+              </div>
+
+              {/* Acordate de cambiar este link por la URL real de tu e-commerce */}
+              <a href="https://sael-store.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 text-brand-navy font-bold hover:gap-4 transition-all cursor-pointer">
+                Visitar tienda en vivo <ArrowRight size={20} />
+              </a>
+            </motion.div>
+
           </div>
 
         </div>
